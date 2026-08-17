@@ -1,4 +1,4 @@
-function Time( { nome, pontos, setPontos, faltas, setFaltas, incrementar, decrementar, zerar }) {
+function Time( { nome, pontos, setPontos, faltas, setFaltas, incrementar, decrementar, vencendo }) {
     return(
         <div className={vencendo ? "vencendo" : ""}>
             <h2>{nome}</h2>
@@ -18,3 +18,5 @@ function Time( { nome, pontos, setPontos, faltas, setFaltas, incrementar, decrem
         </div>
     )
 }
+
+export default Time
