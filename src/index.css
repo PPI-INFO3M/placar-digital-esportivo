@@ -1,7 +1,4 @@
-/* placar-digital-esportivo — CSS PURO com classes
-   Fontes (opcional, no <head> do index.html):
-   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"> */
-
+/* Variáveis */
 :root {
   --bg: #0a0d0b;
   --painel: #12181a;
