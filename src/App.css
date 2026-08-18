@@ -1,0 +1,194 @@
+:root {
+  --bg: #0a0d0b;
+  --painel: #12181a;
+  --borda: #223033;
+  --led: #39ff88;
+  --ambar: #ffb300;
+  --perigo: #ff4d4d;
+  --texto: #dfe9e6;
+  --texto-fraco: #7f9490;
+  --brilho: 0 0 6px currentColor;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--texto);
+  font: 700 1rem/1.4 Rajdhani, system-ui, sans-serif;
+  text-align: center;
+}
+
+/* ---------- Layout ---------- */
+.placar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.cabecalho,
+.nomes,
+.botao-zerar {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Cabeçalho ---------- */
+.cabecalho {
+  border-bottom: 1px solid var(--borda);
+  padding-bottom: 1rem;
+}
+
+.titulo {
+  margin: 0;
+  font: 400 2.6rem/1.1 "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--led);
+  text-shadow: var(--brilho);
+}
+/* ---------- Nomes dos times ---------- */
+.nomes {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.campo-nome {
+  flex: 1;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.input-nome {
+  display: block;
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  background: #060908;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  color: var(--texto);
+  font: 400 1.2rem "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.input-nome:focus {
+  outline: none;
+  border-color: var(--led);
+}
+
+/* ---------- Cartão do time ---------- */
+.time {
+  background: var(--painel);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.time-nome {
+  margin: 0 0 0.75rem;
+  font: 400 1.6rem/1.1 "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.vencendo {
+  border-color: var(--led);
+  box-shadow: 0 0 14px rgba(57, 255, 136, 0.35);
+}
+
+/* ---------- Mostradores LED ---------- */
+.display {
+  display: inline-block;
+  margin: 0.4rem 0;
+  padding: 0.2em 0.6em;
+  background: #060908;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  font-family: "Share Tech Mono", monospace;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--led);
+  text-shadow: var(--brilho);
+}
+
+.display-pontos {
+  display: block;
+  font-size: 2.2rem;
+}
+
+.display-faltas {
+  font-size: 1.3rem;
+  color: var(--ambar);
+}
+
+/* ---------- Rótulos e grupos de botões ---------- */
+.rotulo {
+  margin: 0.75rem 0 0.35rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+}
+
+.botoes {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.botao {
+  min-width: 4rem;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--led);
+  background: #0b120f;
+  border: 1px solid var(--led);
+  border-radius: 999px;
+}
+
+.botao:hover {
+  background: rgba(57, 255, 136, 0.12);
+  box-shadow: var(--brilho);
+}
+
+.botao-zerar {
+  justify-self: center;
+  padding: 0.75rem 2.2rem;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--perigo);
+  background: #0b120f;
+  border: 1px solid var(--perigo);
+  border-radius: 999px;
+}
+
+.botao-zerar:hover {
+  background: rgba(255, 77, 77, 0.12);
+}
+
+@media (max-width: 720px) {
+  .placar {
+    grid-template-columns: 1fr;
+  }
+  .nomes {
+    flex-direction: column;
+  }
+}
