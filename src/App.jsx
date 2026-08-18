@@ -1,7 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 import Time from './components/Time'
 import Cabecalho from './components/Cabecalho'
@@ -42,7 +39,7 @@ function App() {
   const vencedor = calcularVencedor(pontosTime1, pontosTime2)
 
   return(
-    <div>
+    <div className="placar">
       <Cabecalho />
 
       <NomeTimes 
@@ -72,7 +69,7 @@ function App() {
       decrementar={decrementar}
       vencendo={vencedor === 2}
       />
-      <button onClick={() => zerar()}>Zerar</button>
+      <button className="botao-zerar" onClick={() => zerar()}>Zerar</button>
 
 
 
